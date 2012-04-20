@@ -61,7 +61,7 @@
     rotateLeftToRight = CATransform3DRotate(rotateLeftToRight, -45.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
     
     
-    // cycle through sublayers
+    // cycle through subviews
     for (UIView *view in [self.view subviews]) {
         //NSLog(@"view : %@", [view debugDescription]);
         
@@ -86,7 +86,7 @@
             move.toValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-(21.1*view.tag), view.center.y)];
             [array addObject:move];
         } else {
-            //layer.anchorPoint = CGPointMake(0, .5);; //layer.position;
+            //layer.anchorPoint = CGPointMake(0, .5); //layer.position;
         }
         
         // shadow
@@ -108,50 +108,7 @@
         
         group =nil;
         array =nil;
-
-        
     }
-    
-
-
-    
-    
-    /*[UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:1.5];
-    
-    // red view
-    
-    
-    layer.transform = rotationAndPerspectiveTransform;
-    
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.fromValue = [layer valueForKey:@"position"];
-    
-    
-    // iOS
-    animation.toValue = [NSValue valueWithCGPoint:point];
-    animation.duration = duration;
-    
-    // Update the layer's position so that the layer doesn't snap back when the animation completes.
-    layer.position = point;
-
-    
-    // Add the animation, overriding the implicit animation.
-    [view.layer addAnimation:animation forKey:@"position"];
-    
-    // blue view
-    CALayer *layer_blue = self.blueView.layer;
-    CATransform3D rotationAndPerspectiveTransform_blue = CATransform3DIdentity;
-    rotationAndPerspectiveTransform_blue.m34 = 1.0 / -500;
-    rotationAndPerspectiveTransform_blue = CATransform3DRotate(rotationAndPerspectiveTransform_blue, -45.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
-    layer_blue.transform = rotationAndPerspectiveTransform_blue;
-    
-    
-    
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDelegate:self];
-    [UIView commitAnimations];
-     */
 }
 
 
