@@ -15,6 +15,7 @@
 		E4372F67153E353800D9F9BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4372F66153E353800D9F9BD /* AppDelegate.m */; };
 		E4372F6A153E353800D9F9BD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4372F68153E353800D9F9BD /* MainStoryboard.storyboard */; };
 		E4372F6D153E353800D9F9BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4372F6C153E353800D9F9BD /* ViewController.m */; };
+		E48DA467153E40B8005F0C0E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48DA466153E40B8005F0C0E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,16 @@
 		E4372F56153E353800D9F9BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4372F58153E353800D9F9BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4372F5A153E353800D9F9BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E4372F5E153E353800D9F9BD /* foldingView-Info.plist */ = {isa = PBXFileReference; path = "foldingView-Info.plist"; sourceTree = "<group>"; };
+		E4372F5E153E353800D9F9BD /* foldingView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "foldingView-Info.plist"; sourceTree = "<group>"; };
 		E4372F60153E353800D9F9BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4372F62153E353800D9F9BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E4372F64153E353800D9F9BD /* foldingView-Prefix.pch */ = {isa = PBXFileReference; path = "foldingView-Prefix.pch"; sourceTree = "<group>"; };
-		E4372F65153E353800D9F9BD /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4372F64153E353800D9F9BD /* foldingView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "foldingView-Prefix.pch"; sourceTree = "<group>"; };
+		E4372F65153E353800D9F9BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4372F66153E353800D9F9BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4372F69153E353800D9F9BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E4372F6B153E353800D9F9BD /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E4372F6B153E353800D9F9BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4372F6C153E353800D9F9BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E48DA466153E40B8005F0C0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48DA467153E40B8005F0C0E /* QuartzCore.framework in Frameworks */,
 				E4372F57153E353800D9F9BD /* UIKit.framework in Frameworks */,
 				E4372F59153E353800D9F9BD /* Foundation.framework in Frameworks */,
 				E4372F5B153E353800D9F9BD /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +70,7 @@
 		E4372F55153E353800D9F9BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E48DA466153E40B8005F0C0E /* QuartzCore.framework */,
 				E4372F56153E353800D9F9BD /* UIKit.framework */,
 				E4372F58153E353800D9F9BD /* Foundation.framework */,
 				E4372F5A153E353800D9F9BD /* CoreGraphics.framework */,
@@ -274,6 +278,7 @@
 				E4372F72153E353800D9F9BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
