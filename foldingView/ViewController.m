@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>    
 
-const int degrees = 55;
+const float degrees = 55.0f;
 
 @interface ViewController ()
 
@@ -57,13 +57,10 @@ const int degrees = 55;
     // rotate right-to-left
     CATransform3D perspective = CATransform3DIdentity;
     perspective.m34 = 1.0 / -700;
-    //rotateRightToLeft = CATransform3DRotate(rotateRightToLeft, degrees * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
-    rotateRightToLeft = CATransform3DTranslate()
+    CATransform3D rotateRightToLeft = CATransform3DRotate(perspective, degrees * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
     
     // rotate left-to-right
-    CATransform3D rotateLeftToRight = CATransform3DIdentity;
-    rotateLeftToRight.m34 = 1.0 / -700;
-    rotateLeftToRight = CATransform3DRotate(rotateLeftToRight, -(degrees+3) * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+    CATransform3D rotateLeftToRight = CATransform3DRotate(perspective, -degrees * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
     
     CABasicAnimation *shadowAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     [shadowAnim setDuration:2];
@@ -109,8 +106,11 @@ const int degrees = 55;
         // move
         if (view.tag !=0) {
             CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position.x"];
-            cos(degrees);
+            move.fromValue = [NSValue valueWithCGPoint:layer.position];
+            //move.byValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-16, view.center.y)];
+            //move.byValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-((degrees/2)*view.tag), view.center.y)];
             move.toValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-((degrees/2)*view.tag), view.center.y)];
+            
             
             [array addObject:move];
         } else {
