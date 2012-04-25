@@ -109,8 +109,10 @@ const float degrees = 55.0f;
             move.fromValue = [NSValue valueWithCGPoint:layer.position];
             //move.byValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-16, view.center.y)];
             //move.byValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-((degrees/2)*view.tag), view.center.y)];
-            move.toValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-((degrees/2)*view.tag), view.center.y)];
-            
+            move.toValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-(((degrees/2)*view.tag)-3), view.center.y)];
+            //move.toValue = [NSValue valueWithCGPoint:CGPointMake(view.center.x-cosf(degrees), view.center.y)];
+            move.fillMode = kCAFillModeBackwards;
+            //move.beginTime = CACurrentMediaTime () + 0.5;
             
             [array addObject:move];
         } else {
@@ -124,12 +126,11 @@ const float degrees = 55.0f;
         group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         group.autoreverses = YES;
         group.repeatCount = INFINITY;
+        group.fillMode = kCAFillModeBackwards;
         
-        [CATransaction begin];
-        [CATransaction setAnimationDuration:2.];
-            [layer addAnimation:group forKey:nil];
-            [gradient addAnimation:shadowAnim forKey:nil];
-        [CATransaction commit];
+
+        [layer addAnimation:group forKey:nil];
+        [gradient addAnimation:shadowAnim forKey:nil];
         
         group =nil;
         array =nil;

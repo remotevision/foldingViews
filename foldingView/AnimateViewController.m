@@ -57,13 +57,13 @@
     CALayer *topShadow;
     CALayer *middleShadow;
     UIView *mainView;
-    CGFloat width = 300;
-    CGFloat height = 150;
+    CGFloat width = 200;
+    CGFloat height = 60;
     CALayer *firstJointLayer;
     CALayer *secondJointLayer;
     CALayer *perspectiveLayer;
     
-    mainView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, width, height*3)];
+    mainView = [[UIView alloc] initWithFrame:CGRectMake(50, 10, width, height*3)];
     //mainView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:mainView];
     
@@ -82,7 +82,7 @@
     topSleeve.backgroundColor = [UIColor redColor].CGColor;
     topSleeve.position = CGPointMake(width/2, 0);
     [firstJointLayer addSublayer:topSleeve];
-    topSleeve.masksToBounds = YES;
+    topSleeve.masksToBounds = NO;
     
     secondJointLayer = [CATransformLayer layer];
     secondJointLayer.frame = mainView.bounds;
@@ -97,7 +97,7 @@
     middleSleeve.backgroundColor = [UIColor blueColor].CGColor;
     middleSleeve.position = CGPointMake(width/2, 0);
     [secondJointLayer addSublayer:middleSleeve];
-    middleSleeve.masksToBounds = YES;
+    middleSleeve.masksToBounds = NO;
     
     bottomSleeve = [CALayer layer];
     bottomSleeve.frame = CGRectMake(0, height, width, height);
@@ -129,7 +129,7 @@
     [animation setAutoreverses:YES];
     [animation setRepeatCount:INFINITY];
     [animation setFromValue:[NSNumber numberWithDouble:0]];
-    [animation setToValue:[NSNumber numberWithDouble:-90*M_PI/180]];
+    [animation setToValue:[NSNumber numberWithDouble:55*M_PI/180]];
     [firstJointLayer addAnimation:animation forKey:nil];
     
     animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
@@ -137,7 +137,7 @@
     [animation setAutoreverses:YES];
     [animation setRepeatCount:INFINITY];
     [animation setFromValue:[NSNumber numberWithDouble:0]];
-    [animation setToValue:[NSNumber numberWithDouble:180*M_PI/180]];
+    [animation setToValue:[NSNumber numberWithDouble:-110*M_PI/180]];
     [secondJointLayer addAnimation:animation forKey:nil];
     
     animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
@@ -145,7 +145,7 @@
     [animation setAutoreverses:YES];
     [animation setRepeatCount:INFINITY];
     [animation setFromValue:[NSNumber numberWithDouble:0]];
-    [animation setToValue:[NSNumber numberWithDouble:-90*M_PI/180]];
+    [animation setToValue:[NSNumber numberWithDouble:55*M_PI/180]];
     [bottomSleeve addAnimation:animation forKey:nil];
     
     animation = [CABasicAnimation animationWithKeyPath:@"bounds.size.height"];
